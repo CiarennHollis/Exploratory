@@ -1,0 +1,45 @@
+## Playing about in [PICO-8 Education Edition](B4ck1n9_UP_C0d3!)
+* A simple asymmetrical sprite was drawn in the editor to test this code
+
+### Lua Code ###
+function _init()
+-- player created --
+	player={
+		x=63,
+		y=63,
+		sp=1,
+		spflip=false,
+		}
+
+
+end 
+
+
+function _update()
+
+-- player x movement --
+	if btn(➡️) then
+		player.x+=1
+		player.spflip=false
+	end
+	if btn(⬅️) then
+		player.x-=1
+		player.spflip=true
+	end
+	-- player y movement --
+	if btn(⬆️) then
+		player.y-=1
+	end
+	if btn(⬇️) then
+		player.y+=1
+	end
+	
+end
+
+
+function _draw()
+
+-- prints to screen --
+	cls()
+	spr(player.sp, player.x, player.y, 1, 1, player.spflip)
+end
